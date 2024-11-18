@@ -1,5 +1,6 @@
-export const environment = {
-  production: true,
-  apiUrl: 'https://miapi.com/api' // URL del backend para producción
-};
 
+
+export const environment = {
+  production: false,
+  apiUrl: 'https://localhost:7182/api' // URL del backend para el desarrollo
+};

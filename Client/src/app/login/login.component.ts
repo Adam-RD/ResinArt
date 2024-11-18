@@ -26,5 +26,10 @@ export class LoginComponent {
         console.error('Login error', err);
       }
     });
+
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
   }
 }

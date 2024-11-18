@@ -66,7 +66,7 @@ app.UseExceptionHandler(appBuilder =>
 
 app.UseHttpsRedirection();
 
-// Habilitar CORS
+// Habilitar CORS antes de la autenticación
 app.UseCors("PermitirTodo");
 
 // Habilitar autenticación y autorización
