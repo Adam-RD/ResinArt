@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <h2>Lista de Pedidos</h2>
+
+  <!-- Pedidos Pendientes -->
+  <div class="card mb-4">
+    <div class="card-header">
+      Pedidos Pendientes
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre del Artículo</th>
+            <th>Nombre del Cliente</th>
+            <th>Detalle</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pedidosPendientes">
+            <td>{{ pedido.nombreArticulo }}</td>
+            <td>{{ pedido.nombreCliente }}</td>
+            <td>{{ pedido.detalle }}</td>
+            <td>{{ pedido.precio }}</td>
+            <td>
+              <button (click)="completarPedido(pedido.id!)" class="btn btn-success">
+                Completar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Pedidos Completados -->
+  <div class="card mb-4">
+    <div class="card-header">
+      Pedidos Completados
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre del Artículo</th>
+            <th>Nombre del Cliente</th>
+            <th>Detalle</th>
+            <th>Precio</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pedidosCompletados">
+            <td>{{ pedido.nombreArticulo }}</td>
+            <td>{{ pedido.nombreCliente }}</td>
+            <td>{{ pedido.detalle }}</td>
+            <td>{{ pedido.precio }}</td>
+            <td>Completado</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Total de Precios de Pedidos Completados -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5>Total de Precios de Pedidos Completados: {{ totalPrecioCompletados | currency }}</h5>
+    </div>
+  </div>
+</div>

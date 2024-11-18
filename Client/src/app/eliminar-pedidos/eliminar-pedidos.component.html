@@ -1,0 +1,53 @@
+<div class="container mt-4">
+  <h2>Lista de Pedidos</h2>
+
+  <!-- Pedidos Pendientes y Completados -->
+  <div class="card mb-4">
+    <div class="card-header">
+      Pedidos
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre del Artículo</th>
+            <th>Nombre del Cliente</th>
+            <th>Detalle</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pedidosPendientes">
+            <td>{{ pedido.nombreArticulo }}</td>
+            <td>{{ pedido.nombreCliente }}</td>
+            <td>{{ pedido.detalle }}</td>
+            <td>{{ pedido.precio }}</td>
+            <td>Pendiente</td>
+            <td>
+              <button (click)="completarPedido(pedido.id!)" class="btn btn-success">
+                Completar
+              </button>
+              <button (click)="eliminarPedido(pedido.id!)" class="btn btn-danger">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+          <tr *ngFor="let pedido of pedidosCompletados">
+            <td>{{ pedido.nombreArticulo }}</td>
+            <td>{{ pedido.nombreCliente }}</td>
+            <td>{{ pedido.detalle }}</td>
+            <td>{{ pedido.precio }}</td>
+            <td>Completado</td>
+            <td>
+              <button (click)="eliminarPedido(pedido.id!)" class="btn btn-danger">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
