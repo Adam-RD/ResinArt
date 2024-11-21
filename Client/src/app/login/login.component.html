@@ -4,25 +4,25 @@
       <h3 class="card-title text-center mb-4" style="color: #0d6efd;">Login</h3>
       <form (ngSubmit)="onLogin()">
         <div class="mb-3">
-          <label for="username" class="form-label fw-bold">Username</label>
+          <label for="username" class="form-label fw-bold">Usuario</label>
           <input
             type="text"
             class="form-control shadow-sm"
             id="username"
             [(ngModel)]="username"
             name="username"
-            placeholder="Enter your username"
+            placeholder="Digita tu usuario"
             required>
         </div>
         <div class="mb-3">
-          <label for="password" class="form-label fw-bold">Password</label>
+          <label for="password" class="form-label fw-bold">Contraseña </label>
           <input
             type="password"
             class="form-control shadow-sm"
             id="password"
             [(ngModel)]="password"
             name="password"
-            placeholder="Enter your password"
+            placeholder="Digita tu contraseña"
             required>
         </div>
         <div class="d-grid gap-2">
